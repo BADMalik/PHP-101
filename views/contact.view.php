@@ -1,8 +1,4 @@
-<html>
-<head><title>Contact </title>
-<style type="text/css"></style>
-</head>
-<body>
+<?php require('partials/head.php'); ?>
+
 <h1>Contact </h1>
-</body>
-</html>
+<?php require('partials/footer.php'); ?>

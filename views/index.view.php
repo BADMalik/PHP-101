@@ -1,12 +1,10 @@
 
-<html>
-<head>
-<title>Index </title>
-<style type="text/css"></style>
-</head>
-<body>
-<h1>Index </h1>
-</body>
-</html>
+<?php require('partials/head.php'); ?>
 
+<h1>Index </h1>
+<?php require('partials/footer.php'); ?>
+<form action="/names" method="post">
+<input  type="text" name="name"></input>
+<button type="submit">Submit</button>
+</form>
 
