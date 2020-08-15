@@ -9,10 +9,15 @@
 //   'names'=>'controllers/add-names.php'
 // ]);
 
-$router->get('','controllers/index.php');
-$router->get('about','controllers/about.php');
-$router->get('contact','controllers/contact.php');
-$router->get('about/culture','controllers/about-culture.php');
+// $router->get('','controllers/index.php');
+// $router->get('about','controllers/about.php');
+// $router->get('contact','controllers/contact.php');
+// $router->get('about/culture','controllers/about-culture.php');
 
+$router->get('','PagesController@home');
+$router->get('about','PagesController@about');
+$router->get('contact','PagesController@contact');
+// $router->get('about/culture','controllers/about-culture.php');
+$router->get('users','UsersController@index');
 
-$router->post('names','controllers/add-names.php');
+$router->post('users','UsersController@store');

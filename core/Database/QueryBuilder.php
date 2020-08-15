@@ -12,7 +12,7 @@
     {
         $statement = $this->pdo->prepare("SELECT * FROM {$table}");
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_OBJ);
+        return $statement->fetchAll(PDO::FETCH_CLASS);
     }
     public function insert($table,$parameters)
     {

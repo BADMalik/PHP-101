@@ -32,8 +32,25 @@ class Router
     {
       if(array_key_exists($uri,$this->routes[$requestType]))
       {
-        return $this->routes[$requestType][$uri];
+        // return $this->routes[$requestType][$uri];
+        //explode('@',$this->routes[$requestType][$uri]);
+       //explode will return like this 
+       //pagecontroller and home as an array 
+       //The ... operator helps passing an array as two separate parametres
+       //
+        return $this->callAction(...explode('@',$this->routes[$requestType][$uri]));
       }
       throw new Exception('No routes');
-     }
+    }
+    protected function callAction($controller,$action)
+    {
+      // die(var_dump($controller,$action));
+      $controller = new $controller;
+      if(! method_exists($controller,$action))
+      {
+        throw new Exception("No {$action} action found on controller {$controller}");
+      }
+      return $controller->$action();
+      // return (new $controller)->$action();
+    }
 }
